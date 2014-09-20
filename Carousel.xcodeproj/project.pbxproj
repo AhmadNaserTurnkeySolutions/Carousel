@@ -12,6 +12,10 @@
 		2722FA6519CDD22800798814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2722FA6319CDD22800798814 /* Main.storyboard */; };
 		2722FA6719CDD22800798814 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2722FA6619CDD22800798814 /* Images.xcassets */; };
 		2722FA7319CDD22800798814 /* CarouselTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722FA7219CDD22800798814 /* CarouselTests.swift */; };
+		2722FA7D19CDD35100798814 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722FA7C19CDD35100798814 /* WelcomeViewController.swift */; };
+		2722FA7F19CDD5B700798814 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722FA7E19CDD5B700798814 /* SignInViewController.swift */; };
+		27C37B4519CDEFCD001E6AD2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B4419CDEFCD001E6AD2 /* IntroViewController.swift */; };
+		27C37B4719CE0A76001E6AD2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B4619CE0A76001E6AD2 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		2722FA6C19CDD22800798814 /* CarouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2722FA7119CDD22800798814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2722FA7219CDD22800798814 /* CarouselTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTests.swift; sourceTree = "<group>"; };
+		2722FA7C19CDD35100798814 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2722FA7E19CDD5B700798814 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		27C37B4419CDEFCD001E6AD2 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		27C37B4619CE0A76001E6AD2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,10 @@
 				2722FA5F19CDD22800798814 /* AppDelegate.swift */,
 				2722FA6119CDD22800798814 /* ViewController.swift */,
 				2722FA6319CDD22800798814 /* Main.storyboard */,
+				27C37B4619CE0A76001E6AD2 /* FeedViewController.swift */,
+				27C37B4419CDEFCD001E6AD2 /* IntroViewController.swift */,
+				2722FA7E19CDD5B700798814 /* SignInViewController.swift */,
+				2722FA7C19CDD35100798814 /* WelcomeViewController.swift */,
 				2722FA6619CDD22800798814 /* Images.xcassets */,
 				2722FA5D19CDD22800798814 /* Supporting Files */,
 			);
@@ -208,7 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C37B4519CDEFCD001E6AD2 /* IntroViewController.swift in Sources */,
+				2722FA7F19CDD5B700798814 /* SignInViewController.swift in Sources */,
+				2722FA7D19CDD35100798814 /* WelcomeViewController.swift in Sources */,
 				2722FA6219CDD22800798814 /* ViewController.swift in Sources */,
+				27C37B4719CE0A76001E6AD2 /* FeedViewController.swift in Sources */,
 				2722FA6019CDD22800798814 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Carousel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -337,6 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Carousel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -395,6 +413,7 @@
 				2722FA7819CDD22800798814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2722FA7919CDD22800798814 /* Build configuration list for PBXNativeTarget "CarouselTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +422,7 @@
 				2722FA7B19CDD22800798814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
