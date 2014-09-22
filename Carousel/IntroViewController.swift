@@ -21,32 +21,30 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
 
         // Do any additional setup after loading the view.
         scrollView.contentSize = CGSizeMake(1280, 568)
-        //switchControl.alpha = 0
-        //buttonImage.alpha = 0
+        scrollView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-  
-        }
     }
 
     func scrollViewDidEndDecelerating(scrollView: UIScrollView){
         var page = Int(scrollView.contentOffset.x / 320)
-        println("hello")
-        //pager.currentPage = page
+        pager.currentPage = page
+        
+        if page > 2 {
+            pager.alpha = 0
+            UIView.animateWithDuration(0.3, animations: {
+                self.buttonImage.alpha = 1
+                self.switchControl.alpha = 1
+                
+            })
+        } else {
+            pager.alpha = 1
+            switchControl.alpha = 0
+            buttonImage.alpha = 0
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+}

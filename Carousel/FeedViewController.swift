@@ -8,23 +8,52 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImage: UIImageView!
+    @IBOutlet weak var singleImage: UIButton!
+    @IBOutlet weak var learnMoreButton: UIButton!
+    @IBOutlet weak var dismissLearnMoreButton: UIButton!
     
+    var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         scrollView.contentSize = feedImage.frame.size
+        scrollView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 36, right: 0)
+        scrollView.contentOffset.y = -44
+
+        if !defaults.boolForKey("hasSharedPhoto") {
+            defaults.setBool(false, forKey: "hasSharedPhoto")
+            defaults.setBool(false, forKey: "hasUsedTimeWheel")
+            defaults.setBool(false, forKey: "hasViewedPhoto")
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
+    @IBAction func onDismissButton(sender: AnyObject) {
+        dismissBanner()
+    }
     
+    func dismissBanner() {
+        UIView.animateWithDuration(0.3, animations: {
+            self.learnMoreButton.alpha = 0
+            self.learnMoreButton.frame.origin.y = 10
+            
+            self.dismissLearnMoreButton.alpha = 0
+            self.dismissLearnMoreButton.frame.origin.y = 10
+            
+            self.scrollView.contentInset.top = 0
+        })
+    }
 
     /*
     // MARK: - Navigation
