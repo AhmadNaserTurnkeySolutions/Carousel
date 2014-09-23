@@ -55,8 +55,11 @@ class SignInViewController: UIViewController {
     @IBAction func onSignInButton(sender: AnyObject) {
         var alert = UIAlertView(title: "Signing in...", message: nil, delegate: nil, cancelButtonTitle: nil)
         
-        emailTextField.resignFirstResponder()
-        animateForm("down")
+        view.endEditing(true)
+        
+        if formImage.frame.origin != CGPoint(x: 0, y: 190) {
+            animateForm("down")
+        }
         
         if self.emailTextField.text == "" {
             UIAlertView(title: "Email Required", message: "Please enter your email address", delegate: nil, cancelButtonTitle: "OK").show()

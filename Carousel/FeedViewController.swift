@@ -15,8 +15,10 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var singleImage: UIButton!
     @IBOutlet weak var learnMoreButton: UIButton!
     @IBOutlet weak var dismissLearnMoreButton: UIButton!
+    @IBOutlet weak var scrubberImage: UIButton!
     
     let longPressRec = UILongPressGestureRecognizer()
+    let swipeRec = UISwipeGestureRecognizer()
     
     var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
@@ -34,6 +36,9 @@ class FeedViewController: UIViewController {
 
         longPressRec.addTarget(self, action: "onLongPress:")
         singleImage.addGestureRecognizer(longPressRec)
+        
+        swipeRec.addTarget(self, action: "onSwipe:")
+        scrubberImage.addGestureRecognizer(swipeRec)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,11 +51,11 @@ class FeedViewController: UIViewController {
         checkDefaults()
     }
     
-    @IBAction func onScrubberButton(sender: AnyObject) {
+    func onSwipe(gestureRecognizer: UIGestureRecognizer){
         defaults.setBool(true, forKey: "hasUsedTimeWheel")
         checkDefaults()
     }
-    
+
     @IBAction func onImage(sender: AnyObject) {
         defaults.setBool(true, forKey: "hasViewedPhoto")
         checkDefaults()

@@ -56,7 +56,9 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func onTermsButton(sender: AnyObject) {
-        
+        if createFormImage.frame.origin != CGPoint(x: 0, y: 190) {
+            animateForm("down")
+        }
     }
     
     @IBAction func onTap(sender: AnyObject) {
