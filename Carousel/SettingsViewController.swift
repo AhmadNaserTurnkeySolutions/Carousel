@@ -18,8 +18,6 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         scrollView.contentSize = settingsImage.image!.size
-        
-        println(scrollView.contentSize)
     }
 
     override func didReceiveMemoryWarning() {

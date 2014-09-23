@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="auL-of-q3v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="147-as-Lz6">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
@@ -21,7 +21,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BgM-ZD-rmn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BgM-ZD-rmn" userLabel="Sign In Button">
                                         <rect key="frame" x="24" y="1064" width="276" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
@@ -29,6 +29,16 @@
                                         </state>
                                         <connections>
                                             <segue destination="JIn-H8-CQe" kind="push" id="NN0-Sl-gwv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="E0d-bT-uvY" userLabel="Create Button">
+                                        <rect key="frame" x="22" y="1004" width="276" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="sm7-Cv-Qks" kind="push" id="cxN-JS-8nJ"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile5" id="f6e-gh-uNh">
@@ -168,7 +178,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1121" y="385"/>
+            <point key="canvasLocation" x="1110" y="338"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="I6h-FN-3DW">
@@ -238,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bF0-JI-b6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="385"/>
+            <point key="canvasLocation" x="2058" y="313"/>
         </scene>
         <!--Getting Started View Controller-->
         <scene sceneID="wnU-qt-OKw">
@@ -388,7 +398,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="mhP-yR-irs" appends="YES" id="z7i-DJ-OHm"/>
+                                            <action selector="onImage:" destination="V9A-xL-Kry" eventType="touchUpInside" id="s3G-6i-OHc"/>
                                             <segue destination="ePb-IB-RXd" kind="modal" modalTransitionStyle="crossDissolve" id="UCA-1w-STf"/>
                                         </connections>
                                     </button>
@@ -444,6 +454,16 @@
                                     <segue destination="hVU-bz-tQj" kind="modal" modalTransitionStyle="coverVertical" id="LG8-BM-7ZV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eI5-eg-Iox" userLabel="Scrubber Button">
+                                <rect key="frame" x="1" y="532" width="316" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onScrubberButton:" destination="V9A-xL-Kry" eventType="touchUpInside" id="nSN-LT-ebM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -457,11 +477,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fby-5n-JBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="mhP-yR-irs">
-                    <connections>
-                        <outlet property="delegate" destination="jm6-el-B4R" id="JtC-bc-7aN"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3404" y="386"/>
         </scene>
@@ -588,14 +603,203 @@
             </objects>
             <point key="canvasLocation" x="162" y="385"/>
         </scene>
+        <!--Terms View Controller-->
+        <scene sceneID="JzX-di-L1I">
+            <objects>
+                <viewController id="7yf-Ds-yRV" customClass="TermsViewController" customModule="Carousel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8k8-5m-WP5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="Ts1-AH-tfk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terms_nav" id="lCB-Hp-dXw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SOo-ix-DZJ">
+                                <rect key="frame" x="0.0" y="20" width="51" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseButton:" destination="7yf-Ds-yRV" eventType="touchUpInside" id="yrh-7Q-v2x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Ts1-AH-tfk" id="qGQ-f3-PXh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctH-b6-Qef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="-966"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="Lhn-IP-LXd">
+            <objects>
+                <viewController id="sm7-Cv-Qks" customClass="CreateAccountViewController" customModule="Carousel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lK3-dN-xbs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="RSv-QB-8KS">
+                                <rect key="frame" x="0.0" y="67" width="320" height="463"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_text" id="ghh-fC-qv3">
+                                        <rect key="frame" x="0.0" y="19" width="320" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_form" id="jzE-ED-hy5">
+                                        <rect key="frame" x="0.0" y="113" width="320" height="192"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="4QR-f1-umi">
+                                        <rect key="frame" x="21" y="216" width="283" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                        <connections>
+                                            <action selector="onEditEmailTextField:" destination="sm7-Cv-Qks" eventType="editingDidBegin" id="f3B-tI-ZoR"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" id="WpI-hf-Ihd">
+                                        <rect key="frame" x="21" y="130" width="283" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                        <connections>
+                                            <action selector="onEditFirstNameTextField:" destination="sm7-Cv-Qks" eventType="editingDidBegin" id="sOS-Oh-r1p"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" id="HiR-j4-aUe">
+                                        <rect key="frame" x="21" y="173" width="283" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                        <connections>
+                                            <action selector="onEditLastNameTextField:" destination="sm7-Cv-Qks" eventType="editingDidBegin" id="SHy-a6-ohC"/>
+                                            <action selector="onEditLastNameTextField:" destination="sm7-Cv-Qks" eventType="editingDidEnd" id="jL6-RZ-l6W"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="7wN-GS-vzw">
+                                        <rect key="frame" x="21" y="260" width="283" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onEditPasswordTextField:" destination="sm7-Cv-Qks" eventType="editingDidBegin" id="z9E-Gj-r86"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terms_text" id="JPA-N5-6TI">
+                                        <rect key="frame" x="2" y="322" width="320" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YtJ-Tf-sM7" userLabel="Checkbox Button">
+                                        <rect key="frame" x="25" y="327" width="27" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <inset key="titleEdgeInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="check_box">
+                                            <color key="titleColor" red="0.0" green="0.51652550699999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="check_box_selected"/>
+                                        <state key="highlighted" image="check_box_selected"/>
+                                        <connections>
+                                            <action selector="onCheckboxButton:" destination="sm7-Cv-Qks" eventType="touchUpInside" id="hEl-R6-1By"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RxH-rC-Bfn" userLabel="Terms Button">
+                                        <rect key="frame" x="111" y="323" width="37" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTermsButton:" destination="sm7-Cv-Qks" eventType="touchUpInside" id="Qa4-57-YOl"/>
+                                            <segue destination="7yf-Ds-yRV" kind="modal" modalTransitionStyle="coverVertical" id="m1h-YT-FRv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="EA1-9G-SNs" userLabel="Create Button">
+                                        <rect key="frame" x="0.0" y="376" width="320" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="create_button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="H8W-b6-stx" kind="modal" modalTransitionStyle="crossDissolve" id="UTW-Vz-rhI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_nav" id="ylf-7Q-iG8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vqf-Ag-29e" userLabel="Back Button">
+                                <rect key="frame" x="-5" y="20" width="63" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBackButton:" destination="sm7-Cv-Qks" eventType="touchUpInside" id="Vwa-2c-hUU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Vk6-SD-BGd" appends="YES" id="bic-Hk-t4Q"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="9GI-mY-fQw"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="checkboxButton" destination="YtJ-Tf-sM7" id="7XH-2A-0CA"/>
+                        <outlet property="createButton" destination="EA1-9G-SNs" id="AHm-rV-s9g"/>
+                        <outlet property="createFormImage" destination="jzE-ED-hy5" id="tMf-lm-pIg"/>
+                        <outlet property="createTextImage" destination="ghh-fC-qv3" id="APb-q7-Kis"/>
+                        <outlet property="emailTextField" destination="4QR-f1-umi" id="Hro-v8-kLI"/>
+                        <outlet property="firstNameTextField" destination="WpI-hf-Ihd" id="Hjc-fU-njh"/>
+                        <outlet property="lastNameTextField" destination="HiR-j4-aUe" id="VUq-CL-1Zc"/>
+                        <outlet property="passwordTextField" destination="7wN-GS-vzw" id="LTY-gd-ES6"/>
+                        <outlet property="scrollView" destination="RSv-QB-8KS" id="rOg-Cg-Skt"/>
+                        <outlet property="termsButton" destination="RxH-rC-Bfn" id="vFC-pV-GVF"/>
+                        <outlet property="termsTextImage" destination="JPA-N5-6TI" id="uPm-Mb-ffX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVi-gN-jAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Vk6-SD-BGd">
+                    <connections>
+                        <action selector="onTap:" destination="sm7-Cv-Qks" id="utL-Xt-SHm"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1089" y="-331"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backup_button" width="320" height="97"/>
         <image name="banner" width="319" height="44"/>
         <image name="bg" width="319" height="422"/>
+        <image name="check_box" width="20" height="20"/>
+        <image name="check_box_selected" width="20" height="20"/>
         <image name="checkbox_complete" width="24" height="24"/>
         <image name="checkbox_unchecked" width="23" height="23"/>
         <image name="conversations" width="320" height="568"/>
+        <image name="create_button" width="320" height="57"/>
+        <image name="create_form" width="320" height="192"/>
+        <image name="create_nav" width="320" height="66"/>
+        <image name="create_text" width="320" height="63"/>
         <image name="feed" width="320" height="1564"/>
         <image name="feed_nav" width="320" height="65"/>
         <image name="intro" width="320" height="1136"/>
@@ -613,6 +817,8 @@
         <image name="settings_nav" width="320" height="64"/>
         <image name="sign_in_buttons" width="320" height="104"/>
         <image name="sign_in_nav_bar" width="320" height="66"/>
+        <image name="terms_nav" width="320" height="65"/>
+        <image name="terms_text" width="320" height="33"/>
         <image name="welcome1" width="320" height="568"/>
         <image name="welcome2" width="320" height="568"/>
         <image name="welcome3" width="320" height="568"/>
@@ -626,4 +832,7 @@
             <size key="landscapeSize" width="568" height="320"/>
         </simulatedScreenMetrics>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="UTW-Vz-rhI"/>
+    </inferredMetricsTieBreakers>
 </document>

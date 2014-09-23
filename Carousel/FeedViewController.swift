@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
+class FeedViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImage: UIImageView!
@@ -16,21 +16,24 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var learnMoreButton: UIButton!
     @IBOutlet weak var dismissLearnMoreButton: UIButton!
     
+    let longPressRec = UILongPressGestureRecognizer()
+    
     var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         scrollView.contentSize = feedImage.frame.size
         scrollView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 36, right: 0)
         scrollView.contentOffset.y = -44
 
-        if !defaults.boolForKey("hasSharedPhoto") {
-            defaults.setBool(false, forKey: "hasSharedPhoto")
-            defaults.setBool(false, forKey: "hasUsedTimeWheel")
-            defaults.setBool(false, forKey: "hasViewedPhoto")
-        }
+        defaults.setBool(false, forKey: "hasSharedPhoto")
+        defaults.setBool(false, forKey: "hasUsedTimeWheel")
+        defaults.setBool(false, forKey: "hasViewedPhoto")
+
+        longPressRec.addTarget(self, action: "onLongPress:")
+        singleImage.addGestureRecognizer(longPressRec)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +41,29 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    func onLongPress(gestureRecognizer: UIGestureRecognizer){
+        defaults.setBool(true, forKey: "hasSharedPhoto")
+        checkDefaults()
+    }
+    
+    @IBAction func onScrubberButton(sender: AnyObject) {
+        defaults.setBool(true, forKey: "hasUsedTimeWheel")
+        checkDefaults()
+    }
+    
+    @IBAction func onImage(sender: AnyObject) {
+        defaults.setBool(true, forKey: "hasViewedPhoto")
+        checkDefaults()
+    }
 
     @IBAction func onDismissButton(sender: AnyObject) {
         dismissBanner()
+    }
+    
+    func checkDefaults() {
+        if (defaults.boolForKey("hasViewedPhoto") == true) && (defaults.boolForKey("hasUsedTimeWheel") == true) && (defaults.boolForKey("hasSharedPhoto") == true) {
+            dismissBanner()
+        }
     }
     
     func dismissBanner() {

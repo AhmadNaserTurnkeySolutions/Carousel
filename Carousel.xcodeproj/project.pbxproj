@@ -20,6 +20,8 @@
 		27C37B4B19CF210A001E6AD2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B4A19CF210A001E6AD2 /* SettingsViewController.swift */; };
 		27C37B4D19CF8EE5001E6AD2 /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B4C19CF8EE5001E6AD2 /* GettingStartedViewController.swift */; };
 		27C37B4F19CF9DBD001E6AD2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B4E19CF9DBD001E6AD2 /* PhotoViewController.swift */; };
+		27C37B5119CFAB90001E6AD2 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B5019CFAB90001E6AD2 /* CreateAccountViewController.swift */; };
+		27C37B5319CFCE88001E6AD2 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B5219CFCE88001E6AD2 /* TermsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		27C37B4A19CF210A001E6AD2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27C37B4C19CF8EE5001E6AD2 /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettingStartedViewController.swift; sourceTree = "<group>"; };
 		27C37B4E19CF9DBD001E6AD2 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		27C37B5019CFAB90001E6AD2 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		27C37B5219CFCE88001E6AD2 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				2722FA5F19CDD22800798814 /* AppDelegate.swift */,
 				2722FA6119CDD22800798814 /* ViewController.swift */,
 				2722FA6319CDD22800798814 /* Main.storyboard */,
+				27C37B5219CFCE88001E6AD2 /* TermsViewController.swift */,
+				27C37B5019CFAB90001E6AD2 /* CreateAccountViewController.swift */,
 				27C37B4E19CF9DBD001E6AD2 /* PhotoViewController.swift */,
 				27C37B4C19CF8EE5001E6AD2 /* GettingStartedViewController.swift */,
 				27C37B4A19CF210A001E6AD2 /* SettingsViewController.swift */,
@@ -235,12 +241,14 @@
 				27C37B4D19CF8EE5001E6AD2 /* GettingStartedViewController.swift in Sources */,
 				27C37B4919CF2018001E6AD2 /* ConversationViewController.swift in Sources */,
 				27C37B4519CDEFCD001E6AD2 /* IntroViewController.swift in Sources */,
+				27C37B5119CFAB90001E6AD2 /* CreateAccountViewController.swift in Sources */,
 				2722FA7F19CDD5B700798814 /* SignInViewController.swift in Sources */,
 				2722FA7D19CDD35100798814 /* WelcomeViewController.swift in Sources */,
 				2722FA6219CDD22800798814 /* ViewController.swift in Sources */,
 				27C37B4719CE0A76001E6AD2 /* FeedViewController.swift in Sources */,
 				2722FA6019CDD22800798814 /* AppDelegate.swift in Sources */,
 				27C37B4B19CF210A001E6AD2 /* SettingsViewController.swift in Sources */,
+				27C37B5319CFCE88001E6AD2 /* TermsViewController.swift in Sources */,
 				27C37B4F19CF9DBD001E6AD2 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  PhotoViewController.swift
+//  TermsViewController.swift
 //  Carousel
 //
 //  Created by Kyle Pickering on 9/21/14.
@@ -8,13 +8,19 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class TermsViewController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        var url = NSURL(string: "https://www.dropbox.com/terms?mobile=1")
+        var request = NSURLRequest(URL: url)
+        
+        webView.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +28,7 @@ class PhotoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onTap(sender: AnyObject) {
+    @IBAction func onCloseButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
